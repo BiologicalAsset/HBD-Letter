@@ -2,18 +2,8 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
-    transition: background 0.6s ease;
+    flex-direction: column; /* ⬅ ini bikin jadi atas bawah */
     font-family: 'Cormorant Garamond', serif;
-}
-
-/* Background default (Ayya side) */
-body.default {
-    background: radial-gradient(circle at center, #5a3e2b, #2f1e14);
-}
-
-/* Background mint (Ajeng side) */
-body.mint {
-    background: radial-gradient(circle at center, #98ffcc, #2eccaa);
 }
 
 .split {
@@ -22,6 +12,24 @@ body.mint {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.split {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Ajeng (atas) */
+.left {
+    background: radial-gradient(circle at center, #98ffcc, #2eccaa);
+}
+
+/* Ayya (bawah) */
+.right {
+    background: radial-gradient(circle at center, #5a3e2b, #2f1e14);
 }
 
 .envelope-container {
@@ -74,6 +82,15 @@ body.mint {
     transform: translateY(-15px) scale(1.08);
 }
 
+.split:hover .flap {
+    transform: rotateX(25deg);
+}
+
+/* semua CSS kamu yang sekarang */
+
+/* ========================= */
+/* MOBILE VERSION */
+/* ========================= */
 @media (max-width: 600px) {
 
     .container {
@@ -100,9 +117,4 @@ body.mint {
     .gif {
         width: 90px;
     }
-
-}
-
-.split:hover .flap {
-    transform: rotateX(25deg);
 }

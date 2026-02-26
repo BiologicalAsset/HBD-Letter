@@ -74,6 +74,35 @@ body.mint {
     transform: translateY(-15px) scale(1.08);
 }
 
+@media (max-width: 600px) {
+
+    .container {
+        width: 280px;
+        height: 180px;
+    }
+
+    .letter {
+        width: 92%;
+        height: 80vh;
+        padding: 25px;
+    }
+
+    .letter h1 {
+        font-size: 32px;
+    }
+
+    .letter p {
+        font-size: 16px;
+        line-height: 1.7;
+        text-indent: 20px;
+    }
+
+    .gif {
+        width: 90px;
+    }
+
+}
+
 .split:hover .flap {
     transform: rotateX(25deg);
 }

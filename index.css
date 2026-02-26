@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    transition: background 0.6s ease;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Background default (Ayya side) */
+body.default {
+    background: radial-gradient(circle at center, #5a3e2b, #2f1e14);
+}
+
+/* Background mint (Ajeng side) */
+body.mint {
+    background: radial-gradient(circle at center, #98ffcc, #2eccaa);
+}
+
+.split {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.envelope-container {
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+/* Amplop */
+.envelope {
+    width: 220px;
+    height: 140px;
+    background: #d8c3a5;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+    transition: 0.4s ease;
+}
+
+.flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #c4a484;
+    clip-path: polygon(0 0, 50% 70%, 100% 0);
+    transform-origin: top;
+    transition: 0.4s ease;
+}
+
+
+
+.envelope.ajeng {
+  background: #A8E6CF;
+}
+
+.flap.ajeng {
+    background:#4e977c83 
+}
+
+
+/* Nama */
+.envelope-container p {
+    font-size: 30px;
+    margin-top: 20px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Hover effect */
+.split:hover .envelope-container {
+    transform: translateY(-15px) scale(1.08);
+}
+
+.split:hover .flap {
+    transform: rotateX(25deg);
+}

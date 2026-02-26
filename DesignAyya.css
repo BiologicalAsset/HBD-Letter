@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dancing+Script&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at center, #5a3e2b, #2f1e14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    overflow: hidden;
+}
+
+/* Amplop */
+.container {
+    position: relative;
+    width: 350px;
+    height: 230px;
+    cursor: pointer;
+}
+
+.envelope {
+    width: 100%;
+    height: 100%;
+    background: #d8c3a5;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    position: relative;
+}
+
+.flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #c4a484;
+    clip-path: polygon(0 0, 50% 70%, 100% 0);
+    transform-origin: top;
+    transition: 1s ease;
+}
+
+/* Kertas Besar */
+.letter {
+    position: fixed;
+    width: 80%;
+    height: 85vh;
+    background: #f4ecd8;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    padding: 60px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: 1.2s ease;
+    overflow-y: auto;
+    background-image:
+        radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 4px 4px;
+    pointer-events: none;
+}
+
+/* Scrollbar vintage */
+.letter::-webkit-scrollbar {
+    width: 6px;
+}
+.letter::-webkit-scrollbar-thumb {
+    background: #b08968;
+    border-radius: 3px;
+}
+
+/* Judul */
+.letter h1 {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    margin-bottom: 40px;
+    color: #4a2c2a;
+}
+
+/* Paragraf */
+.letter p {
+    font-size: 22px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: #3e2a1f;
+    text-indent: 40px;
+    text-align: justify;
+    text-indent: 40px;
+}
+
+.letter p.no-indent {
+    text-indent: 0;
+}
+
+/* Animasi */
+.open .flap {
+    transform: rotateX(180deg);
+}
+
+.open-letter {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+/* GIF */
+.gif {
+    position: fixed;
+    width: 150px;
+    opacity: 0;
+    transition: 0.8s ease;
+    pointer-events: none;
+}
+
+.left-gif {
+    bottom: 20px;
+    left: 20px;
+}
+
+.right-gif {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Saat aktif */
+.show-gif {
+    opacity: 1;
+}
+
+.link-versi {
+    text-decoration: none;
+    font-size: 20px;
+    color: #4a2c2a;
+    border-bottom: 1px solid #4a2c2a;
+    padding-bottom: 3px;
+    transition: 0.3s ease;
+}
+
+.link-versi:hover {
+    color: #b08968;
+    border-color: #b08968;
+}
